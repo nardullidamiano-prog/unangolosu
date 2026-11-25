@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-sand-50: #faf8f5;
+    --color-sand-100: #f5f0e9;
+    --color-sand-200: #e8dfd3;
+    --color-sand-300: #d6c9b6;
+    --color-sand-400: #c2b299;
+    --color-sand-500: #a8997f;
+    --color-sand-600: #8b7d65;
+    --color-sand-700: #6f6451;
+    --color-sand-800: #544b3d;
+    --color-sand-900: #393329;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    color: #2a2520;
+    background-color: #faf8f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background-color: #c2b299;
+    color: #faf8f5;
+  }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-sans-body {
+    font-family: 'Jost', system-ui, sans-serif;
+  }
+  .tracking-luxe {
+    letter-spacing: 0.25em;
+  }
+  .tracking-wide-luxe {
+    letter-spacing: 0.15em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Subtle fade-up animation for scroll reveals */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero Ken-Burns slow zoom */
+  @keyframes kenburns {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.12) translate(-1.5%, -1%); }
+  }
+  .animate-kenburns {
+    animation: kenburns 20s ease-out infinite alternate;
+  }
+
+  /* Slow crossfade for gallery */
+  @keyframes galleryFade {
+    0%, 100% { opacity: 1; }
+    45%, 55% { opacity: 0; }
+  }
+
+  /* Thin elegant scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f5f0e9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c2b299;
+    border-radius: 0;
+  }
+}
